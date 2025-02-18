@@ -1,2 +1,2 @@
 # projeto-marosa-front
-Font-end do projeto semestral do professor Cristiano para a materia de PW3
+Repositorio para o front-end do projeto semestral do professor Cristiano do componente PW3
