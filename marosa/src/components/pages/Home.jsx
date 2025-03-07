@@ -1,17 +1,13 @@
-import React from 'react'
+import React from 'react';
 import styles from './Home.module.css';
 
-const Home = ()=>{
-    return(
-
+const Home = () => {
+    return (
         <section className={styles.home_container}>
-
-            <h1>Bem vindo a <span>MAROSA</span></h1>
-            <p>Compre os melhores artigos de casa!</p>
-            <img className='product_home' src="./book_home.jpg" alt="" />
-
+            <h1>Bem-vindo à <span>MAROSA</span></h1>
+            <p>O conforto da sua casa começa aqui!</p>
+            <img className={styles.product_home} src="./marosa_capa.png" alt="Capa Marosa" />
         </section>
-
     );
 }
 

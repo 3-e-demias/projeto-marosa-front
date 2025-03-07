@@ -1,32 +1,38 @@
-.home_container{
+.home_container {
     width: 100%;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 4em;
+    padding: 4em 2em;
     background-color: #fff;
+    text-align: center;
 }
 
-.home_container h1{
-    font-size: 2.5em;
-    margin-bottom: .5em;
+.home_container h1 {
+    font-size: 2.2em;
+    margin-bottom: 0.5em;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.home_container h1 span{
+.home_container h1 span {
     color: #B695C0;
-    padding: 0 .2em;
+    padding: 0.2em 0.4em;
     background-color: #FFFF;
+    border-radius: 5px;
 }
 
-.home_container p{
+.home_container p {
     margin-bottom: 1.5em;
     color: #7B7B7B;
+    font-size: 1.1em;
 }
 
-.home_container img{
-    width: 800px;
-    margin: 0;
+.product_home {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
 }
+
+
