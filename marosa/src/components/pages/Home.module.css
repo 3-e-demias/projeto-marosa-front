@@ -1,0 +1,32 @@
+.home_container{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4em;
+    background-color: #fff;
+}
+
+.home_container h1{
+    font-size: 2.5em;
+    margin-bottom: .5em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.home_container h1 span{
+    color: #B695C0;
+    padding: 0 .2em;
+    background-color: #FFFF;
+}
+
+.home_container p{
+    margin-bottom: 1.5em;
+    color: #7B7B7B;
+}
+
+.home_container img{
+    width: 800px;
+    margin: 0;
+}
