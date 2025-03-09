@@ -16,17 +16,13 @@
 .item{
     margin-right: 1em;
     color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-
-.item a{
+a{
     text-decoration: none;
 }
 
 .item a:hover{
     color:pink;
-}
-
-.logo{
-    width: 120px;
 }
