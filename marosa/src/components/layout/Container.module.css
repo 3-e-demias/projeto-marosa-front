@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container{
     width: 1200px;
     display: flex;
@@ -5,4 +6,13 @@
     justify-content: space-between;
     margin: 0 auto;
     flex-wrap: wrap;
+=======
+.container{
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    flex-wrap: wrap;
+>>>>>>> 02a98e1e9dd76243f44061ec2eb198928cc43bfa
 }
