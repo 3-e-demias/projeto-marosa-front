@@ -1,0 +1,11 @@
+.button_container button{
+    background-color: #B695C0;
+    padding: 5px;
+    margin-top: 15px;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    border-radius: 5px;
+    border: solid 2px;
+    border-color: blueviolet;
+}
