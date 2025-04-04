@@ -1,6 +1,6 @@
 import style from './Input.module.css';
 
-function Input({text, type, name, id, placeholder, value, handlerChange}) {
+function Input({text, type, name, id, placeholder, value, handlerChange,useref}) {
     return(
         <div className={style.input_container}>
             <p>{text}</p>
@@ -10,7 +10,8 @@ function Input({text, type, name, id, placeholder, value, handlerChange}) {
             id={id}
             placeholder={placeholder}
             value={value}
-            onChange={handlerChange} />
+            onChange={handlerChange}
+            ref={useref} />
         </div>
     )
 }
