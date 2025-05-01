@@ -1,11 +1,14 @@
 import React from "react";
+import ProductResume from "../ProductResume";
 import style from './Listproduct.module.css'
 
 const ListProduct = ()=>{
     return(
-        <section>
-            <h1>LIST PRODUCT</h1>
-        </section>
+        <div className={style.container}>
+            <h1 className={style.title}>Produtos</h1>
+            <div className={style.box}>
+            </div>
+        </div>
     )
 }
 

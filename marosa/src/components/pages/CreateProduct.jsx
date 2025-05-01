@@ -32,7 +32,7 @@ const CreacteProduct = () => {
 
     function creacteProduct(product)
     {
-       
+    
             fetch('http://localhost:2025/produtos',{
                 method:"POST",
                 mode:'cors',
@@ -46,7 +46,7 @@ const CreacteProduct = () => {
             }).catch((error)=>{
                 console.log(error)
             })
-       
+    
     }
     return(
         <div className={style.container}>
@@ -57,17 +57,17 @@ const CreacteProduct = () => {
                 <Input 
                 text="Nome do produto:"
                 type="text"
-                name="nome"
-                id="nome"
+                name="cod_product"
+                id="cod_product"
                 placeholder="Toalha de mesa"
                 handlerChange={handlerChangeProduct} 
-               />
+            />
 
                 <Input 
                 text="Descrição:"
                 type="text"
-                name="descricao"
-                id="descricao"
+                name="description_product"
+                id="description_product"
                 placeholder="Vermelha com bolinhas brancas"
                 handlerChange={handlerChangeProduct}
                 />
@@ -82,11 +82,11 @@ const CreacteProduct = () => {
                 <Input 
                 text="Preço:"
                 type="number"
-                name="preco"
-                id="preco"
+                name="price_product"
+                id="price_product"
                 placeholder="R$25,00"
                 handlerChange={handlerChangeProduct} 
-               
+            
                 />
 
                 <Button 
