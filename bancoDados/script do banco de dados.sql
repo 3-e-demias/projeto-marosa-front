@@ -10,3 +10,10 @@ create table produtos(
 	Preco int,
     primary key(id)
 );
+
+select * from produtos;
+
+
+
+
+

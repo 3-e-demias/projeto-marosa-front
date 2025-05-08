@@ -57,7 +57,7 @@ const CreacteProduct = () => {
                 <Input 
                 text="Nome do produto:"
                 type="text"
-                name="cod_product"
+                name="nome"
                 id="cod_product"
                 placeholder="Toalha de mesa"
                 handlerChange={handlerChangeProduct} 
@@ -66,7 +66,7 @@ const CreacteProduct = () => {
                 <Input 
                 text="Descrição:"
                 type="text"
-                name="description_product"
+                name="descricao"
                 id="description_product"
                 placeholder="Vermelha com bolinhas brancas"
                 handlerChange={handlerChangeProduct}
@@ -82,7 +82,7 @@ const CreacteProduct = () => {
                 <Input 
                 text="Preço:"
                 type="number"
-                name="price_product"
+                name="preco"
                 id="price_product"
                 placeholder="R$25,00"
                 handlerChange={handlerChangeProduct} 
