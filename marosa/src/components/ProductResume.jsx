@@ -1,14 +1,16 @@
 import Button from "./form/Button";
 import style from "./ProductResume.module.css";
 
-const ProductResume = ({ nome, preco }) => {
+const ProductResume = ({ nome, preco, cod_prod  }) => {
     console.log("Props recebidas:", nome, preco);
     return(
         <div className={style.container}>
             <p className={style.name}>{nome}</p>
             <p className={style.price}>R${preco}</p>
             <Button
-            text="Saber mais" />
+            text="Saber mais" 
+            router = '/detailProd/'
+            cod_prod={cod_prod}/>
         </div>
     )
 }

@@ -29,6 +29,7 @@ const ListProduct = () => {
                     produtos.map((produto) => (
                         
                         <ProductResume
+                            cod_prod = {produto.id}
                             key={produto.id}
                             nome={produto.Nome_produto}
                             descricao={produto.Descrição}
