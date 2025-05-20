@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import style from './DetailProd.module.css'
 import Button from '../form/Button'
 
-import fotoProd from '../../../public/marosa_capa.png'
+import fotoProd from '../../../public/marosa_logo.png'
 
 const DetailProd = () => {
 
@@ -12,10 +12,10 @@ const DetailProd = () => {
     const {cod_prod} = useParams();
     console.log('ID:' + cod_prod);
 
-    /* CRIA O STATE DE DADOS QUE VAI ARMAZENAR O DEALHE DO LIVRO ESCOLHIDO */
+    /* CRIA O STATE DE DADOS QUE VAI ARMAZENAR O DETALHE DO PRODUTO ESCOLHIDO */
     const[prod, setProd] = useState({});
 
-    /* RECUPERANDO OS DADOS DE LIVRO PARA A EDIÇAO */
+    /* RECUPERANDO OS DADOS DO PRODUTO PARA A EDIÇAO */
     useEffect(()=>{
 
         fetch(`http://localhost:2025/detailProd/${cod_prod}`, {
@@ -46,9 +46,9 @@ const DetailProd = () => {
 
             <div className={style.info}>
 
-                <span className={style.titulo}>{prod.Nome_produto}</span>
-                <span className={style.autor}>{prod.categoria_produto}</span>
-               <h1>{prod.Preco}</h1>
+                <span className={style.name}>{prod.Nome_produto}</span>
+                <span className={style.categorie}>Categoria: {prod.categoria_produto}</span>
+                <h1>R${prod.Preco},00</h1>
 
                 <span className={style.descricao}>
                     {prod.Descrição}
@@ -57,14 +57,14 @@ const DetailProd = () => {
                 <div className={style.container_buttons}>
                     
                     <Button 
-                        text='EDITAR'
+                        text='Editar'
                         router='/updateProd/'
                         cod_prod={prod.id}
                         
                     />
 
                     <Button 
-                        text='EXCLUIR'
+                        text='Excluir'
                         router='/deleteProd/'
                         cod_prod={prod.id}
                     />

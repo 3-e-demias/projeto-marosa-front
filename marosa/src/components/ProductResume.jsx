@@ -1,4 +1,4 @@
-import Button from "./form/Button";
+import Button from "./Button.jsx";
 import style from "./ProductResume.module.css";
 
 const ProductResume = ({ nome, preco, cod_prod  }) => {

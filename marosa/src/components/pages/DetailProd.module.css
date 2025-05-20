@@ -1,42 +1,45 @@
 .grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
     gap: 20px;
-    padding: 10px;
 }
 
 .info{
+    background-color: rgb(237, 213, 237);
+    border-radius: 15px;
+    border: 2px solid blueviolet;
+    margin-top: 180px;
+    padding: 15px;
     display: grid;
-    align-items: start;
-    justify-items: start;
-    align-self: self-start;
+    align-items: center;
+    justify-items: center;
 }
 
 .container_img{
-    display: grid;
+    display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
     width: 100%;
-    /* background-color: #999; */
+    margin-top: 150px;
 }
 
 .img_book_detail{
-    display: grid;
-    align-items: end;
-    justify-items: end;
+    display: flex;
+    align-items: center;
+    justify-items: center;
     width: 300px;
     border-radius: 5px;
 }
 
-.titulo{
-
-    font-size: 40px;
-    padding: 50px;
+.name{
+    font-size: 35px;
+    padding: 15px;
 }
 
-.autor{
-    font-size: 30px;
-    color: #ccc;
+.categorie{
+    font-size: 25px;
     padding: 10px;
 }
 
@@ -59,4 +62,5 @@
     grid-template-columns: repeat(2, 1fr);
     gap:5px;
     color: #999;
+    padding-bottom: 25px;
 }
