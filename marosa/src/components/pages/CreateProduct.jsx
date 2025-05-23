@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import InputMask from "react-input-mask";
 import style from './CreacteProduct.module.css';
-import back from "../../../services/backend.js"
 import Input from "../form/Input";
 import Select from "../form/Select";
 import Button from "../form/Button";
@@ -20,18 +19,35 @@ const CreacteProduct = () => {
     }
 
     function handlerChangeCategory(event){
-        setProduct({... product, categoria : event.target.options[event.target.selectedIndex].text});
+        setProduct({... product, id : event.target.options[event.target.selectedIndex].value});
     }
 
     
     function submit(event){
         event.preventDefault();
         console.log(product);
-        creacteProduct(product);
+        insertProduct(product);
     }
 
+       useEffect(()=>{
+        fetch('http://127.0.0.1:2025/produtos/listagemCategorias', {
+            method:'GET',
+            headers:{
+                'Content-Type':'application/json',
+                'Access-Control-Allow-Origin':'*',
+                'Access-Control-Allow-Headers':'*'
+            },
+                }).then((resp)=>
+                    resp.json()
+                ).then((categorias)=>{
+                    console.log('TESTE: ' + categorias);
+                    setCategorias(categorias)
+                }).catch((error)=>{
+                    console.log('ERRO: ' + error);
+                })
+            }, []);
 
-    function creacteProduct(product)
+    function insertProduct(product)
     {
     
             fetch('http://localhost:2025/produtos',{
@@ -75,9 +91,10 @@ const CreacteProduct = () => {
 
                 <Select 
                 text="Categoria:"
-                name="categoria"
-                id="categoria" 
+                name="id"
+                id="id" 
                 handlerChange={handlerChangeCategory}
+                options={categorias}
                 />
 
                 <Input 

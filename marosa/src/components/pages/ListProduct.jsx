@@ -10,7 +10,7 @@ const ListProduct = () => {
         async function fetchProdutos() {
             try {
                 const response = await axios.get("http://localhost:2025/produtos");
-                console.log("Dados recebidos:", response.data);
+                console.log("Dados recebidos:", response);
                 setProdutos(response.data);
                 console.log("Produtos recebidos:", response.data); 
             } catch (error) {
@@ -31,9 +31,9 @@ const ListProduct = () => {
                         <ProductResume
                             cod_prod = {produto.id}
                             key={produto.id}
-                            nome={produto.Nome_produto}
-                            descricao={produto.Descrição}
-                            preco={produto.Preco}
+                            nome={produto.nome_produto}
+                            descricao={produto.descricao}
+                            preco={produto.preco}
                             categoria={produto.categoria_produto}
                         />
                     ))

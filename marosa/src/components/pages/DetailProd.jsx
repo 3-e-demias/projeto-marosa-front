@@ -46,12 +46,12 @@ const DetailProd = () => {
 
             <div className={style.info}>
 
-                <span className={style.name}>{prod.Nome_produto}</span>
+                <span className={style.name}>{prod.nome_produto}</span>
                 <span className={style.categorie}>Categoria: {prod.categoria_produto}</span>
-                <h1>R${prod.Preco},00</h1>
+                <h1>R${prod.preco},00</h1>
 
                 <span className={style.descricao}>
-                    {prod.Descrição}
+                    {prod.descricao}
                 </span>
 
                 <div className={style.container_buttons}>

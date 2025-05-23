@@ -23,8 +23,28 @@ const UpdateProduct = () => {
                 console.log(product);
         }
 
-        useEffect(()=>{
-                fetch(`http://localhost:5000/detailProd/${cod_prod}`, {
+        
+
+                useEffect(()=>{
+                        fetch('http://127.0.0.1:2025/produtos/listagemCategorias', {
+                        method:'GET',
+                        headers:{
+                                'Content-Type':'application/json',
+                                'Access-Control-Allow-Origin':'*',
+                                'Access-Control-Allow-Headers':'*'
+                        },
+                                }).then((resp)=>
+                                resp.json()
+                                ).then((categorias)=>{
+                                console.log('TESTE: ' + categorias);
+                                setCategorias(categorias)
+                                }).catch((error)=>{
+                                console.log('ERRO: ' + error);
+                                })
+                        }, []);
+
+                        useEffect(()=>{
+                fetch(`http://localhost:2025/detailProd/${cod_prod}`, {
                 method: 'GET',
                 mode:'cors',
                 headers:{
@@ -35,7 +55,9 @@ const UpdateProduct = () => {
                 })
                 .then((resp)=>resp.json())
                 .then((data)=>{
-                        setProduct(data.data);
+                        console.log(data)
+                        setProduct(data[0]);
+                        console.log(product)
                 })
                 .catch((err)=>{console.log(err)});
         }, []);
@@ -44,7 +66,7 @@ const UpdateProduct = () => {
         
                 console.log(JSON.stringify(product))
         
-                fetch('http://localhost:5000/alterarProduto', {
+                fetch(`http://localhost:2025/detailProd/${cod_prod}`, {
                         method:'PUT',
                         mode:'cors',
                         headers:{
@@ -82,11 +104,11 @@ const UpdateProduct = () => {
                                 <Input 
                                 text="Nome do produto:"
                                 type="text"
-                                name="nome"
-                                id="cod_product"
+                                name="nome_produto"
+                                id="nome_produto"
                                 placeholder="Toalha de mesa"
                                 handlerChange={handlerChangeProduct} 
-                                value={product.Nome_produto} />
+                                value={product.nome_produto} />
 
                                 <Input 
                                 text="Descrição:"
@@ -95,13 +117,14 @@ const UpdateProduct = () => {
                                 id="description_product"
                                 placeholder="Vermelha com bolinhas brancas"
                                 handlerChange={handlerChangeProduct} 
-                                value={product.Descrição} />
+                                value={product.descricao} />
 
                                 <Select 
                                 text="Categoria:"
                                 name="categoria"
                                 id="categoria" 
-                                handlerChange={handlerChangeCategory} />
+                                handlerChange={handlerChangeCategory} 
+                                options={categorias}/>
 
                                 <Input 
                                 text="Preço:"
@@ -110,7 +133,7 @@ const UpdateProduct = () => {
                                 id="price_product"
                                 placeholder="R$25,00"
                                 handlerChange={handlerChangeProduct} 
-                                value={product.Preco} />
+                                value={product.preco} />
 
                                 <Button 
                                 text='Editar produto'/>

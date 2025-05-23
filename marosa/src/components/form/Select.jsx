@@ -1,14 +1,16 @@
 import style from './Select.module.css';
 
-function Select({text, name, id, handlerChange}) {
+function Select({text, name, id, handlerChange, options}) {
     return(
         <div className={style.select_container}>
             <p>{text}</p>
             <select name={name} id={id} onChange={handlerChange}>
                 <option value="">Selecione uma categoria</option>
-                <option value="">Limpeza</option>
-                <option value="">Decoração</option>
-                <option value="">Organização</option>
+               {
+                options.map((option)=>(
+                    <option value={option.id} key ={option.id} id={option.id}>{option.nome}</option>
+                ))
+               }
             </select>
         </div>
     )
