@@ -7,8 +7,9 @@ import Input from "../form/Input";
 import Select from "../form/Select";
 import Button from "../form/Button";
 import styles from "../../components/form/Input.module.css"
+
 const CreacteProduct = () => {
-    const [categorias,setCategorias] = useState([])
+    const [categorias, setCategorias] = useState([])
     const [product, setProduct] = useState({});
     
     

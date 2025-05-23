@@ -1,0 +1,28 @@
+.container{
+    display: block;
+    place-items: center;
+
+    background-color: rgb(237, 213, 237);
+
+    border-radius: 15px;
+
+    border: 2px solid blueviolet;
+
+    width: auto;
+    height: auto;
+
+    margin-top: 14.5%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.container h1 {
+    padding: 20px;
+    width: auto;
+    height: auto;
+}
+
+.container Button{
+    margin-bottom: 20px;
+}

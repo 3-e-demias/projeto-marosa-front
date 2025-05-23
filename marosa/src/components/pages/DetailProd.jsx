@@ -2,7 +2,7 @@ import {React, useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 
 import style from './DetailProd.module.css'
-import Button from '../form/Button'
+import Button from '../Button.jsx'
 
 import fotoProd from '../../../public/marosa_logo.png'
 
