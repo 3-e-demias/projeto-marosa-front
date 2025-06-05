@@ -5,9 +5,13 @@ import style from './CreacteProduct.module.css';
 import Input from "../form/Input";
 import Select from "../form/Select";
 import Button from "../form/Button";
-import styles from "../../components/form/Input.module.css"
+import { useNavigate } from 'react-router-dom';
+
 
 const CreacteProduct = () => {
+
+    const navigate = useNavigate();
+
     const [categorias, setCategorias] = useState([])
     const [product, setProduct] = useState({});
     
@@ -47,24 +51,29 @@ const CreacteProduct = () => {
                 })
             }, []);
 
-    function insertProduct(product)
-    {
-    
-            fetch('http://localhost:2025/produtos',{
-                method:"POST",
-                mode:'cors',
-                headers:{
-                    'Content-Type':'application/json',
-                    'Access-Control-Allow-Origin':'*',
-                    'Access-Control-Allow-Headers':'*'
-                },body:JSON.stringify(product)
-            }).then((response)=>{
-                response.json();
-            }).catch((error)=>{
-                console.log(error)
-            })
-    
-    }
+    function insertProduct(product) {
+    fetch('http://localhost:2025/produtos', {
+        method: "POST",
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': '*'
+        },
+        body: JSON.stringify(product)
+    })
+    .then((response) => {
+        if (response.ok) {
+            navigate('/listProduct');
+        } else {
+            console.log('Erro ao cadastrar produto');
+        }
+    })
+    .catch((error) => {
+        console.log(error);
+    })
+}
+
     return(
         <div className={style.container}>
             <h1>Cadastro de produto</h1>

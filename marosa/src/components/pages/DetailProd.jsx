@@ -47,7 +47,7 @@ const DetailProd = () => {
             <div className={style.info}>
 
                 <span className={style.name}>{prod.nome_produto}</span>
-                <span className={style.categorie}>Categoria: {prod.categoria_produto}</span>
+                <span className={style.categorie}>Categoria: {prod.nome_categoria}</span>
                 <h1>R${prod.preco},00</h1>
 
                 <span className={style.descricao}>
